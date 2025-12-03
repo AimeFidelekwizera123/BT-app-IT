@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Home</title>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font-family: Arial, Helvetica, sans-serif; background: black; }
+      
+      /* Navigation Bar */
+      .navbar { background: linear-gradient(90deg, #0052cc, #003d99); padding: 0; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+      .nav-container { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; }
+      .nav-logo { color: white; font-size: 24px; font-weight: bold; text-decoration: none; }
+      .nav-links { display: flex; gap: 24px; list-style: none; }
+      .nav-links a { color: white; text-decoration: none; font-weight: 500; padding: 16px 0; transition: opacity 0.3s; }
+      .nav-links a:hover { opacity: 0.8; }
+      
+      /* Announcement Banners */
+      .announcements { max-width: 1200px; margin: 32px auto; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding: 0 24px; }
+      .announcement { padding: 40px; background: linear-gradient(135deg, #0052cc, #003d99); color: white; border-radius: 12px; text-align: center; box-shadow: 0 6px 20px rgba(0,82,204,0.2); }
+      .announcement h2 { font-size: 28px; margin-bottom: 12px; }
+      .announcement p { font-size: 16px; line-height: 1.6; margin-bottom: 20px; }
+      .announcement-btn { background: white; color: #0052cc; padding: 12px 24px; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 14px; transition: transform 0.2s; }
+      .announcement-btn:hover { transform: scale(1.05); }
+      
+      /* Main Content */
+      .container { max-width: 1200px; margin: 40px auto; padding: 40px; background: white; box-shadow: 0 6px 18px rgba(0,0,0,0.06); border-radius: 12px; }
+      h1 { margin-bottom: 20px; color: #0052cc; }
+      .note { margin-top: 20px; color: #556; font-size: 14px; }
+      
+      @media (max-width: 768px) {
+        .announcements { grid-template-columns: 1fr; }
+        .nav-links { gap: 12px; }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="/" class="nav-logo">BT-App</a>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/login.html">Login</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Announcement Banners -->
+    <section class="announcements">
+      <div class="announcement">
+        <h2>Welcome to Interactive World</h2>
+        <p>Discover an amazing experience with our cutting-edge interactive platform designed for modern users.</p>
+        <button class="announcement-btn">Learn More</button>
+      </div>
+      <div class="announcement">
+        <h2>Join Our Community</h2>
+        <p>Connect with millions of users worldwide and explore endless possibilities in our interactive ecosystem.</p>
+        <button class="announcement-btn">Get Started</button>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+      <h1>Welcome to Our Platform</h1>
+      <p class="note">Use the navigation menu above to explore different sections. Learn more about us, get in touch, or login to your account.</p>
+    </div>
+  </body>
+</html>
