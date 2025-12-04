@@ -14,6 +14,7 @@ spec:
     spec:
       containers:
         - name: node-app
-          image: node-app:latest
+          image: btech:prod
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3000

@@ -6,32 +6,142 @@
     <title>Home</title>
     <style>
       * { margin: 0; padding: 0; box-sizing: border-box; }
-      body { font-family: Arial, Helvetica, sans-serif; background: black url('https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=1200') no-repeat bottom center; background-size: cover; }
-      
+      body { 
+        font-family: Arial, Helvetica, sans-serif; 
+        background: rgb(255, 240, 245) url('https://images.pexels.com/photos/374074/pexels-photo-374074.jpeg?auto=compress&cs=tinysrgb&w=1200') no-repeat bottom center; 
+        background-size: cover; 
+      }
+
       /* Navigation Bar */
-      .navbar { background: linear-gradient(90deg, #0052cc, #003d99); padding: 0; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
-      .nav-container { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; }
-      .nav-logo { color: white; font-size: 24px; font-weight: bold; text-decoration: none; }
-      .nav-links { display: flex; gap: 24px; list-style: none; }
-      .nav-links a { color: white; text-decoration: none; font-weight: 500; padding: 16px 0; transition: opacity 0.3s; }
+      .navbar { 
+        background: linear-gradient(90deg, #ff9ccf, #ff6fa3); 
+        padding: 0; 
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15); 
+      }
+      .nav-container { 
+        max-width: 1200px; 
+        margin: 0 auto; 
+        display: flex; 
+        align-items: center; 
+        justify-content: space-between; 
+        padding: 0 24px; 
+      }
+      .nav-logo { 
+        color: white; 
+        font-size: 24px; 
+        font-weight: bold; 
+        text-decoration: none; 
+      }
+      .nav-links { 
+        display: flex; 
+        gap: 24px; 
+        list-style: none; 
+      }
+      .nav-links a { 
+        color: white; 
+        text-decoration: none; 
+        font-weight: 500; 
+        padding: 16px 0; 
+        transition: opacity 0.3s; 
+      }
       .nav-links a:hover { opacity: 0.8; }
-      
-      /* Announcement Banners */
-      .announcements { max-width: 1200px; margin: 32px auto; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding: 0 24px; }
-      .announcement { padding: 40px; background: linear-gradient(135deg, #0052cc, #003d99); color: white; border-radius: 12px; text-align: center; box-shadow: 0 6px 20px rgba(0,82,204,0.2); }
-      .announcement h2 { font-size: 28px; margin-bottom: 12px; }
-      .announcement p { font-size: 16px; line-height: 1.6; margin-bottom: 20px; }
-      .announcement-btn { background: white; color: #0052cc; padding: 12px 24px; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 14px; transition: transform 0.2s; }
-      .announcement-btn:hover { transform: scale(1.05); }
-      
+
+      /* Carousel for Announcements */
+      .carousel { 
+        max-width: 1200px; 
+        margin: 32px auto; 
+        position: relative; 
+        overflow: hidden; 
+        border-radius: 12px;
+      }
+      .carousel-track { 
+        display: flex; 
+        transition: transform 0.5s ease-in-out; 
+      }
+      .carousel-slide { 
+        min-width: 100%; 
+        padding: 40px; 
+        color: white; 
+        background: linear-gradient(135deg, #ff6fa3, #ff9ccf); 
+        text-align: center; 
+        box-shadow: 0 6px 20px rgba(255,111,163,0.3); 
+      }
+      .carousel-slide h2 { font-size: 28px; margin-bottom: 12px; }
+      .carousel-slide p { font-size: 16px; line-height: 1.6; margin-bottom: 20px; }
+      .carousel-slide button { 
+        background: white; 
+        color: #ff6fa3; 
+        padding: 12px 24px; 
+        border: none; 
+        border-radius: 6px; 
+        font-weight: 600; 
+        cursor: pointer; 
+        font-size: 14px; 
+        transition: transform 0.2s; 
+      }
+      .carousel-slide button:hover { transform: scale(1.05); }
+
       /* Main Content */
-      .container { max-width: 1200px; margin: 40px auto; padding: 40px; background: white; box-shadow: 0 6px 18px rgba(0,0,0,0.06); border-radius: 12px; }
-      h1 { margin-bottom: 20px; color: #0052cc; }
-      .note { margin-top: 20px; color: #556; font-size: 14px; }
-      
+      .container { 
+        max-width: 1200px; 
+        margin: 40px auto; 
+        padding: 40px; 
+        background: rgba(255,255,255,0.95); 
+        box-shadow: 0 6px 18px rgba(0,0,0,0.06); 
+        border-radius: 12px; 
+        text-align: center;
+      }
+      h1 { margin-bottom: 20px; color: #ff6fa3; }
+      .note { margin-top: 20px; color: #555; font-size: 14px; }
+
+      /* Action Buttons */
+      .action-buttons { 
+        margin-top: 30px; 
+        display: flex; 
+        justify-content: center; 
+        gap: 20px; 
+        flex-wrap: wrap;
+      }
+      .action-buttons button { 
+        background: #ff6fa3; 
+        color: white; 
+        padding: 14px 28px; 
+        border: none; 
+        border-radius: 8px; 
+        font-weight: 600; 
+        font-size: 16px; 
+        cursor: pointer; 
+        transition: transform 0.2s, background 0.3s; 
+      }
+      .action-buttons button:hover { 
+        transform: scale(1.05); 
+        background: #ff9ccf; 
+      }
+
+      /* Images Section */
+      .images-section { 
+        max-width: 1200px; 
+        margin: 40px auto; 
+        display: grid; 
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+        gap: 20px; 
+        padding: 0 24px;
+      }
+      .images-section img { 
+        width: 100%; 
+        height: 180px; 
+        object-fit: cover; 
+        border-radius: 12px; 
+        box-shadow: 0 6px 18px rgba(0,0,0,0.1); 
+        transition: transform 0.3s, filter 0.3s; 
+      }
+      .images-section img:hover { 
+        transform: scale(1.05) rotate(1deg); 
+        filter: brightness(1.1); 
+      }
+
       @media (max-width: 768px) {
-        .announcements { grid-template-columns: 1fr; }
-        .nav-links { gap: 12px; }
+        .action-buttons { flex-direction: column; }
       }
     </style>
   </head>
@@ -49,17 +159,24 @@
       </div>
     </nav>
 
-    <!-- Announcement Banners -->
-    <section class="announcements">
-      <div class="announcement">
-        <h2>Welcome to Interactive World</h2>
-        <p>Discover an amazing experience with our cutting-edge interactive platform designed for modern users.</p>
-        <button class="announcement-btn">Learn More</button>
-      </div>
-      <div class="announcement">
-        <h2>Join Our Community</h2>
-        <p>Connect with millions of users worldwide and explore endless possibilities in our interactive ecosystem.</p>
-        <button class="announcement-btn">Get Started</button>
+    <!-- Carousel Announcements -->
+    <section class="carousel">
+      <div class="carousel-track">
+        <div class="carousel-slide">
+          <h2>Welcome to Interactive World</h2>
+          <p>Discover an amazing experience with our cutting-edge interactive platform designed for modern users.</p>
+          <button>Learn More</button>
+        </div>
+        <div class="carousel-slide">
+          <h2>Join Our Community</h2>
+          <p>Connect with millions of users worldwide and explore endless possibilities in our interactive ecosystem.</p>
+          <button>Get Started</button>
+        </div>
+        <div class="carousel-slide">
+          <h2>Explore Courses</h2>
+          <p>Check out a variety of courses to enhance your skills and knowledge in different domains.</p>
+          <button>Explore Now</button>
+        </div>
       </div>
     </section>
 
@@ -67,6 +184,37 @@
     <div class="container">
       <h1>Welcome to Our Platform</h1>
       <p class="note">Use the navigation menu above to explore different sections. Learn more about us, get in touch, or login to your account.</p>
+
+      <!-- Action Buttons -->
+      <div class="action-buttons">
+        <button onclick="location.href='/students.html'">Student List</button>
+        <button onclick="location.href='/courses.html'">Courses</button>
+        <button onclick="location.href='/lectures.html'">List of Lectures</button>
+      </div>
     </div>
+
+    <!-- Images Section -->
+    <section class="images-section">
+      <img src="https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Students studying">
+      <img src="https://images.pexels.com/photos/4145192/pexels-photo-4145192.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Classroom">
+      <img src="https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Online course">
+      <img src="https://images.pexels.com/photos/3184330/pexels-photo-3184330.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Lecture">
+    </section>
+
+    <!-- Carousel Script -->
+    <script>
+      const track = document.querySelector('.carousel-track');
+      const slides = Array.from(track.children);
+      let index = 0;
+
+      function moveSlide() {
+        index++;
+        if (index >= slides.length) index = 0;
+        const slideWidth = slides[0].getBoundingClientRect().width;
+        track.style.transform = `translateX(-${index * slideWidth}px)`;
+      }
+
+      setInterval(moveSlide, 4000); // Slide every 4 seconds
+    </script>
   </body>
 </html>

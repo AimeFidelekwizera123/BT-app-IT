@@ -17,7 +17,6 @@ app.get('/health', (req, res) => {
 	res.json({ status: 'ok' });
 });
 
-app.listen(PORT, () => {
-	console.log(`Server listening on http://localhost:${PORT}`);
+app.listen(3000, '0.0.0.0', () => {
+  console.log('Server listening on port 3000');
 });
-
